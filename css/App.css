@@ -1,0 +1,178 @@
+
+#dashboard{
+    
+}
+
+.mainBody{
+    background-color: #212529;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+hr{
+    background-color: #F700C4;
+    width: 100%;
+    height: 1px;
+    
+
+}
+.h3-logo-text{
+
+    color: white;
+    font-size: em;
+    font-weight: 400;
+}
+
+.sidebar .sidebar-wrapper{
+    width: 100%;
+    min-height: 100%;
+    max-height: calc(100vh - 705px);
+    z-index: 4;
+    position: relative;
+    overflow: auto;
+    background-color: #007bff;
+}
+@media screen and (max-width :500px){
+    .nav-screen{
+        
+        display: none;
+    }
+}
+
+@media screen and (min-width :500px){
+.dashboard{
+    display: flexbox;
+    width: 100%;
+    height: 100%;
+    background-color:#F700C4;
+    border-radius: 10px;
+}
+}
+@media screen and (min-width :500px){
+    .arrow-icon, .closebtn{
+        display: none;
+        margin-left: 0;
+    }
+}
+
+.h4-text{
+    color: black;
+}
+
+.scrolling-bar{
+    padding-top: 0.5em;
+    height:4em;
+}
+.state_name_totalCases{
+    background-color: transparent;
+    font-size: 2em;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+  }
+
+.modal-header{
+    display:  inline;
+}
+.modal-title{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.modal-body{
+    overflow: auto;
+}
+.card-text{
+    font-size: 3em;
+    font-weight: bolder;
+    
+}
+.card .card-body .card-title{
+    color: black;
+}
+.card p{
+    color: black;
+}
+
+@media screen and (max-width :500px){
+.sidePanel{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 9rem;
+    left: 0;
+    background-color: #F700C4;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.sidePanel .nav-screen{
+    display: flex;
+}
+
+.sidePanel .closebtn{
+    
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+}
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.dropdown-item{
+    padding-left: 0;
+}
+
+.dropdown-item a:hover{
+   background-size: contain;
+}
+canvas {
+    border: 1px dotted red;
+  }
+  .chart-container {
+      padding-right: 2rem;
+      padding-bottom: 1rem;
+        position: relative;
+        margin: auto;
+        height: 100vh;
+        width: 80vw;
+  }
+
+  @media screen and (max-width :500px){
+    .chart-container{
+        padding-right: 2rem;
+        padding-bottom: 1rem;
+          position: relative;
+          margin: auto;
+          height: 100vh;
+          width: 90vw;
+    }
+}
+
+  
