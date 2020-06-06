@@ -28,7 +28,7 @@
           <a class="arrow-icon openbtn" onclick="opennav()" ><i class="fas fa-arrow-circle-right fa-3x"></i></a>
         
         <!-- Button trigger modal -->
-        <button type="button" onclick="notification()" class="btn btn-primary m-3 " data-toggle="modal" data-target="#exampleModalLong">
+        <button type="button" onclick="notification()" class="btn btn-danger m-3 " data-toggle="modal" data-target="#exampleModalLong">
           Notifications <span class="badge badge-default" id="notificationNum"></span>
         </button>
       </div>
@@ -178,6 +178,24 @@
             </div>
           </div>
         </div>
+        <div class="row m-3" id="additionalDetails">
+          <div class="col-md-3 col-12">
+            <div class="additionalDetails">
+              <button class="btn btn-danger animation-on-hover " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                AdditionalDetails
+              </button>
+              <div class="card collapse" id="collapseExample">
+                <h4 class="card-title m-3" id="stateName"></h4>
+                <h5 class="m-3" id="contactNumber"></h5>
+                <div class="card card-body" id="additionalDetailsBody">
+                  <table id="tableDetails">
+                    
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="row m-3">
           <div class="col-md-12">
             <div class="chart-container">
@@ -265,8 +283,9 @@
         document.getElementById("sidePanel").style.width = "0";
       }
       function selectSate(){
-        console.log("entering");
+        // console.log("entering");
         console.log(document.getElementById("stateWise").selectedIndex);
+        
     }
   </script>
 </body>

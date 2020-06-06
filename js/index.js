@@ -7,31 +7,125 @@ const url_covidAvailableBed = 'https://api.rootnet.in/covid19-in/hospitals/beds'
 const url_covidContact = 'https://api.rootnet.in/covid19-in/contacts';
 const url_covidNotification = 'https://api.rootnet.in/covid19-in/notifications'
 
-let notification = [];
-var randomNum = [];
+var data_covidStatus ={};
+var data_covidTest ={};
+var data_covidMediCollage ={};
+var data_covidAvailableBed ={};
+var data_covidContact ={};
+var data_covidNotification ={};
 var sateName =[];
 var stateNameCases = [];
-var rgbaArray =[];
-var chartData_state = [];
-var chartData_india = [];
+let medicalCollage =[];
 // var stateName_number;
 // let state_totalCase;
-for(var counter =1;counter<=20;counter++){
-    randomNum.push(Math.floor((Math.random() * 20) + 1));
-}
+
+
 // randomNum.forEach(function(item){
 //     console.log(item+"\n");
 // });
    
 
  getCovidData();
+ 
 
-
-    //**********************Genarate random rgba array****************// */
+    //**********************stateWise information passes to app.html-card,chart,*********** */
+    function stateWise_information(selectedState){
+        let stateName_number = (sateName.indexOf(selectedState));
+        let state_totalCase = data_covidStatus.data.regional[stateName_number].totalConfirmed;
+        let state_discharged = data_covidStatus.data.regional[stateName_number].discharged;
+        let state_deaths = data_covidStatus.data.regional[stateName_number].deaths;
+        let state_activeCases = (state_totalCase-(state_discharged+state_deaths));
+        let contact_information = (data_covidContact.data.contacts.regional);
+        let medicalCollages_informations = (data_covidMediCollage.data.medicalColleges);
         
-    for(var rgba_counter =0;rgba_counter<35;rgba_counter++){
-        var o = Math.round, r = Math.random, s = 255;
-        rgbaArray.push( 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')');
+        let contact_number ={};
+        contact_information.forEach(function(item, index, array){
+            if(item.loc ===selectedState){
+                contact_number = item;  
+            }
+        //    console.log(index+":"+item.loc);
+        });
+        console.log("contact_number"+":"+contact_number.number);
+        medicalCollages_informations.forEach(function(item, index, array){
+            if(item.state === selectedState){
+                 medicalCollage.push({hospitalName:item.name,city:item.city,ownership:item.ownership});
+            }
+        });
+        //  console.log(medicalCollage);
+         
+        //*******************************Add Table with covid information's***************** */
+       
+        var chartData_state =[];
+        chartData_state.push(state_totalCase,state_activeCases,state_discharged,state_deaths);
+        // console.log(chartData_state);
+        
+
+        document.getElementById("totalCases").innerHTML = state_totalCase;
+        document.getElementById("activeCases").innerHTML = state_activeCases;
+        document.getElementById("discharged").innerHTML = state_discharged;
+        document.getElementById("deaths").innerHTML = state_deaths;
+        
+        addData_stateCases(myChart, chartData_state);
+        chartData_state.length =0;
+
+        //var additionalDetailsID = document.getElementById("additionalDetails");
+        var additionalDetailsClass = document.getElementById("additionalDetails").querySelectorAll(".additionalDetails");
+        console.log(additionalDetailsClass[0]);
+        additionalDetailsClass[0].style.display = "contents"
+       
+        document.getElementById("stateName").innerHTML = "State :"+ selectedState;
+        document.getElementById("contactNumber").innerHTML = "Contact Number :"+ contact_number.number;
+        let table = document.getElementById("tableDetails");
+        var row = table.insertRow(0);
+        var cell0 = row.insertCell(0);
+        var cell1 = row.insertCell(1);
+        var cell2 = row.insertCell(2);
+        cell0.innerHTML = "Medical Collages";
+        cell1.innerHTML = "City";
+        cell2.innerHTML = "OwnerShip";
+        medicalCollage.forEach(function(item, index, array){
+            console.log(item);
+             row = table.insertRow(index+1);
+             cell0 = row.insertCell(0);
+             cell1 = row.insertCell(1);
+             cell2 = row.insertCell(2);
+             cell0.innerHTML = item.hospitalName;
+             cell1.innerHTML = item.city;
+             cell2.innerHTML = item.ownership;
+             console.log(index);
+        });
+        medicalCollage.length =0;
+        // let thead = table.createTHead();
+        // thead.setAttribute("id", "thead");
+        // let row = thead.insertRow(0);
+        // thead.appendChild(row);
+        // let th = document.createElement("th");
+        // row.appendChild(th);
+        // let td = document.createElement("td");
+        // th.appendChild(td);
+        // var hospital = document.createTextNode("MedicalCollage");
+        // td.appendChild(hospital);
+        // document.getElementById("thead").appendChild(row);
+        // console.log(table);  
+
+        // console.log(contact_information);
+    }
+    //**********************Genarate random number array**************** */
+    function randomNum_genaretor(){
+        var randomNum =[];
+        for(var counter =1;counter<=20;counter++){
+            randomNum.push(Math.floor((Math.random() * 35) + 1));
+        }
+        return randomNum;
+    }
+    //**********************Genarate random rgba array****************// */
+    function rgbColor(){  
+        var  rgbaArray =[]; 
+        for(var rgba_counter =0;rgba_counter<35;rgba_counter++){
+            var o = Math.round, r = Math.random, s = 255;
+            rgbaArray.push( 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')');
+        }
+        return rgbaArray;
     }
     /////************************Chart************************///// */
     var ctx = document.getElementById('myChart');
@@ -42,21 +136,16 @@ for(var counter =1;counter<=20;counter++){
             datasets: [{
                 label: 'StateWise Cases',
                 data: [],
-                backgroundColor: rgbaArray,
-                borderColor: [
-                    'rgba(255, 18, 99, 1)'
-                ],
-                borderWidth: 2,
+                backgroundColor: rgbColor(),
+                borderColor: rgbColor(),
+                borderWidth: 5,
                 order: 2
                },{
                 label: 'Total Cases',
                 data:[],
-                backgroundColor:[
-                    '255,18,99,1'
-                ],
-                borderColor: [
-                    'rgba(255, 18, 99, 1)'
-                ],
+                backgroundColor: rgbColor(),
+                borderColor: rgbColor(),
+                borderWidth: 5,
                 type: 'line',
                 order: 1
                }]
@@ -104,25 +193,26 @@ for(var counter =1;counter<=20;counter++){
         }    
         myChart.update();
     }
+
  
 async function getCovidData(){
     const data_covidStatustemp = await fetch(url_covidStatus);
-    const data_covidStatus  = await data_covidStatustemp.json();
+    data_covidStatus  = await data_covidStatustemp.json();
 
     const data_covidTesttemp = await fetch(url_covidTest);
-    const data_covidTest  = await data_covidTesttemp.json();
+    data_covidTest  = await data_covidTesttemp.json();
 
     const data_covidMediCollagetemp = await fetch(url_covidMediCollage);
-    const data_coviMediCollage  = await data_covidMediCollagetemp.json();
+    data_covidMediCollage  = await data_covidMediCollagetemp.json();
 
     const data_covidAvailableBedtemp = await fetch(url_covidAvailableBed);
-    const data_covidAvailableBed  = await data_covidAvailableBedtemp.json();
+    data_covidAvailableBed  = await data_covidAvailableBedtemp.json();
 
     const data_covidContacttemp = await fetch(url_covidContact);
-    const data_covidContact  = await data_covidContacttemp.json();
+    data_covidContact  = await data_covidContacttemp.json();
 
     const data_covidNotificationtemp = await fetch(url_covidNotification);
-    const data_covidNotification = await data_covidNotificationtemp.json();
+    data_covidNotification = await data_covidNotificationtemp.json();
 
     let lastOriginUpdate = data_covidStatus.lastOriginUpdate;
     let totalCases = data_covidStatus.data.summary.total;
@@ -132,7 +222,8 @@ async function getCovidData(){
     var activeCases = totalCases-(discharged+deaths+confirmedCasesForeign);
     //  console.log(totalCases+ " "+ discharged+ " "+ deaths);
     // console.log(activeCases);
-    chartData_india.push(totalCases,activeCases,discharged,deaths);// array to contain all india cases(total,active,discharged,deaths)
+    var chartData_india =[];
+     chartData_india.push(totalCases,activeCases,discharged,deaths);// array to contain all india cases(total,active,discharged,deaths)
 
     // **********************Total conformed cases state wide*****************//
     // console.log(data_covidStatus.data.regional.length)
@@ -157,33 +248,17 @@ async function getCovidData(){
         option.classList.add("dropdown-item");
         option.value = state_name_totalCases[state_name_counter].state_name;
         option.addEventListener('click',function(){
-            // console.log(option.value);
-            
-            let stateName_number = (sateName.indexOf(option.value));
-            let state_totalCase = data_covidStatus.data.regional[stateName_number].totalConfirmed;
-            let state_discharged = data_covidStatus.data.regional[stateName_number].discharged;
-            let state_deaths = data_covidStatus.data.regional[stateName_number].deaths;
-            let state_activeCases = (state_totalCase-(state_discharged+state_deaths));
-            // console.log(state_activeCases);
-            
-            chartData_state.push(state_totalCase,state_activeCases,state_discharged,state_deaths);
-            console.log(chartData_state);
-            
-
-            document.getElementById("totalCases").innerHTML = state_totalCase;
-            document.getElementById("activeCases").innerHTML = state_activeCases;
-            document.getElementById("discharged").innerHTML = state_discharged;
-            document.getElementById("deaths").innerHTML = state_deaths;
-
-            addData_stateCases(myChart, chartData_state);
-            chartData_state.length =0;
+            //  console.log(option.value);
+            stateWise_information(option.value);
         });
         state_name_id.appendChild(option);
         // console.log(option);
     }
     //********************Random selected 20 Covid Notifications******************//
     // console.log(data_covidNotification.data.notifications[20]);
-
+    let notification = [];
+    var randomNum = randomNum_genaretor();
+    // console.log(randomNum);
     for(var noti_count=0;noti_count<20;noti_count++){
         notification.push(data_covidNotification.data.notifications[randomNum[0]]);
     }
