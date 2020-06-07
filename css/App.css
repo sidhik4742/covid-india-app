@@ -191,6 +191,13 @@ canvas {
           width: 90vw;
     }
 }
+@media screen and (max-width :500px){
+    .disablebtn{
+    pointer-events: none;
+    cursor: default;
+    }
+}
+
 .additionalDetails{
     display: none;
 }
