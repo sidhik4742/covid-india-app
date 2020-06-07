@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'fontMalayalam';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://smc.org.in/downloads/fonts/meera/Meera.woff2?v=7.0) format('woff2'), url(https://smc.org.in/downloads/fonts/meera/Meera.woff?v=7.0) format('woff'), url(https://smc.org.in/downloads/fonts/meera/Meera.ttf?v=7.0) format('truetype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+  }
+  .font {
+    font-family: 'fontMalayalam';
+  }
+
 
 #dashboard{
     
@@ -45,8 +56,10 @@ hr{
     display: flexbox;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     background-color:#F700C4;
     border-radius: 10px;
+    padding-bottom: 2.5rem;
 }
 }
 @media screen and (min-width :500px){
@@ -54,6 +67,9 @@ hr{
         display: none;
         margin-left: 0;
     }
+}
+.fa-arrow-circle-right{
+    color: #F700C4;
 }
 
 .h4-text{
@@ -116,9 +132,10 @@ hr{
     top: 9rem;
     left: 0;
     background-color: #F700C4;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     transition: 0.5s;
+    padding-bottom: 2.5rem;
 }
 .sidePanel .nav-screen{
     display: flex;
@@ -135,14 +152,14 @@ hr{
 }
 .scrollable-menu {
     height: auto;
-    max-height: 200px;
+    max-height: 300px;
     overflow-y: auto;
 }
 }
 
 .scrollable-menu {
     height: auto;
-    max-height: 200px;
+    max-height: 300px;
     overflow-y: auto;
 }
 .dropdown-item{
@@ -153,7 +170,7 @@ hr{
    background-size: contain;
 }
 canvas {
-    border: 1px dotted red;
+    border: 3px dotted #F700C4;
   }
   .chart-container {
       padding-right: 2rem;
@@ -174,5 +191,25 @@ canvas {
           width: 90vw;
     }
 }
-
+.additionalDetails{
+    display: none;
+}
+.collapse{
+    width: max-content !important;
+}
+table{
+    border: 3px solid #FF003E;
+    width: 100%;
+}
+td {
+    height: 50px;
+    vertical-align: bottom;
+  }
+  th, td {
+    border: 3px solid #FF003E;
+    padding: 15px;
+    text-align: left;
+    color: whitesmoke;
+    
+  }
   

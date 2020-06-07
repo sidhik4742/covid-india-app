@@ -25,19 +25,19 @@
       </div>
       <div class="col-md-9 col-12">
         <div class="p-2">
-          <a class="arrow-icon openbtn" onclick="opennav()" ><i class="fas fa-arrow-circle-right fa-3x"></i></a>
+          <a class="arrow-icon openbtn" onclick="opennav()" ><i class="fas fa-arrow-circle-right fa-3x bg-color"></i></a>
         
         <!-- Button trigger modal -->
-        <button type="button" onclick="notification()" class="btn btn-primary m-3 " data-toggle="modal" data-target="#exampleModalLong">
-          Notifications <span class="badge badge-default" id="notificationNum"></span>
-        </button>
+          <button type="button" onclick="notification()" class="btn btn-danger m-3 " data-toggle="modal" data-target="#exampleModalLong">
+            Notifications <span class="badge badge-default" id="notificationNum"></span>
+          </button>
       </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+          <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Covid-19 News</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Covid-19 News Link</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                   <i class="tim-icons icon-simple-remove"></i>
                 </button>
@@ -60,9 +60,125 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closenav()">&times;</a>
             <nav class="nav flex-column pt-3 nav-screen">
               <h4 class="text-center h4-text">Dashboard</h4>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#scroll&dashboard">
-                Dashboard
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#covid_precautions">
+                COVID-19
               </button>
+               <!-- Modal -->
+        <div class="modal fade bd-example-modal-lg" id="covid_precautions" tabindex="-1" role="dialog" aria-labelledby="covid_precautions" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title font" id="covid_precautions">CoronaVirus Covid 19: കൊറോണ: കരുതല്‍, പ്രതിരോധം: അറിയേണ്ടതെല്ലാം</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  <i class="tim-icons icon-simple-remove"></i>
+                </button>
+              </div>
+              <div class="modal-body ">
+                <p>
+                   വൈറസ് ബാധിച്ച ഒരാള്‍ തൊട്ട വസ്തുക്കളില്‍ വൈറസ് സാന്നിധ്യം ഉണ്ടാകാം. 
+                   ആ വസ്തുക്കള്‍ മറ്റൊരാള്‍ സ്പര്‍ശിച്ച് പിന്നീട് ആ കൈകള്‍ കൊണ്ട് മൂക്കിലോ കണ്ണിലോ മറ്റോ തൊട്ടാലും രോഗം പടരും.
+                </p>
+                <p>
+                  ചൈനയിലെ വുഹാനിൽ പൊട്ടിപ്പുറപ്പെട്ട കൊറോണ വൈറസ് കേരളത്തിൽ വീണ്ടും പ്രത്യക്ഷപ്പെട്ടിരിക്കുന്നു. 
+                  രാജ്യത്ത് ആദ്യമായി കേരളത്തിലാണ് കൊറോണ വൈറസ് കണ്ടെത്തിയത്. ചൈനയിൽനിന്ന് എത്തിയ മൂന്നുപേർക്കാണു ഫെബ്രുവരിയിൽ രോഗം&nbsp;സ്ഥിരീകരിച്ചത്. ഇവർ രോഗമുക്തരായി ആശുപത്രി വിട്ടിരുന്നു.&nbsp;&nbsp;
+                  ഇത്തവണ പത്തനംതിട്ടയിൽ ഒരു കുടുംബത്തിലെ അഞ്ചുപേരിലാണു രോഗം കണ്ടെത്തിയത്. ഇറ്റലിയിൽനിന്നെത്തിയ മൂന്നുപേർക്കും ബന്ധുക്കളായ രണ്ടുപേർക്കുമാണു രോഗം സ്ഥിരീകരിച്ചത്.
+                </p>
+                <p>
+                  മനു​ഷ്യ​രി​ൽനി​ന്നു മ​നു​ഷ്യ​രി​ലേ​ക്കു വേഗത്തില്‍ പ​ട​രു​മെ​ന്ന​താ​ണ് രോ​ഗ​ത്തെ കൂ​ടു​ത​ൽ അപക​ട​കാ​രി​യാ​ക്കു​ന്ന​ത്. അതീവജാഗ്രതയോടെയിരിക്കേണ്ട ഒരു സമയമാണിത്. 
+                  കൊറോണ വൈറസ് ബാധിക്കാതിരിക്കാനുള്ള മുന്‍കരുതലുകളാണ് അതില്‍ പ്രധാനം.
+                </p>
+                <div class="modal-header">
+                  <h2 class="modal-title font" id="covid_precautions">What is Corona Virus, COVID 19?: എന്താണ് കൊറോണ വൈറസ് ?</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    വായുവിലൂടെ പകരുന്ന കൊറോണ വൈറസുകള്‍ സസ്‍തനികളുടെയും പക്ഷികളുടെയും ശ്വസനാവയവത്തെയും അന്നനാളത്തെയുമാണ് ആദ്യം ബാധിക്കുന്നത്. 
+                    സൂണോട്ടിക് എന്ന് ശാസ്ത്രജ്ഞർ വിശേഷിപ്പിക്കുന്ന ഈ വൈറസുകൾ മനുഷ്യരിലേക്കും പടരുന്നു.
+                  </p>
+                  <p>
+                    സാധാരണ ജലദോഷപ്പനി മുതല്‍ സിവിയര്‍ അക്യൂട്ട് റെസ്പിറേറ്ററി സിന്‍ഡ്രോം (സാര്‍സ്), മിഡില്‍ ഈസ്റ്റ് റെസ്പിറേറ്ററി സിന്‍ഡ്രോം (മെര്‍സ്) എന്നിവയുണ്ടാകാന്‍ ഇടയാക്കുന്ന ഒരു വലിയ കൂട്ടം വൈറസുകളാണ് കൊറോണ വൈറസുകള്‍. 
+                    2019 ഡിസംബർ 31 ന് ചൈനയിലെ ഹുബൈ പ്രവിശ്യയിലെ വുഹാൻ നഗരത്തിലാണ് രോഗം ആദ്യം കണ്ടെത്തിയത്. 2002-ല്‍ ചൈനയില്‍ പൊട്ടിപ്പുറപ്പെട്ട് രണ്ട് ഡസനിലധികം രാജ്യങ്ങളിലേക്ക് പടര്‍ന്ന സാര്‍സ് രോഗത്തിന് കാരണമായ 
+                    വൈറസിന്‍റെ പുതിയ രൂപമാണ് ഇപ്പോൾ കണ്ടെത്തിയിരിക്കുന്നത്. 2019 nCoV എന്നാണ് ലോകാരോഗ്യ സംഘടന പുതിയ വൈറസിന് പേര് നല്‍കിയിരിക്കുന്നത്.
+                    2012ൽ പൊട്ടിപ്പുറപ്പെട്ടതും തുടർന്ന് എണ്ണൂറിലേറെ പേരുടെ മരണത്തിനിടയാക്കിയ മിഡില്‍ ഈസ്റ്റ് റെസ്‍പിറേറ്ററി സിന്‍ഡ്രോം (മെര്‍സ്) എന്ന രോഗത്തിന് കാരണമായതും കൊറോണ വിഭാഗത്തിലുള്ള വൈറസ് തന്നെയായിരുന്നു.
+                  </p>
+                </div>
+                <div class="modal-header">
+                  <h2 class="modal-title font" id="covid_precautions">Types of Corona Virus: കൊറോണ വൈറസുകൾ ഏതെല്ലാം ?</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    കൊറോണ വൈറസുകൾ ഏഴ് തരമാണ് ഉള്ളത്. ഇവയിൽ മിഡില്‍ ഈസ്റ്റ് റെസ്പിറേറ്ററി സിന്‍ഡ്രോം (മെര്‍സ്), സിവിയര്‍ അക്യൂട്ട് റെസ്പിറേറ്ററി സിന്‍ഡ്രോം (സാര്‍സ്) എന്നിവയാണ് പ്രധാനപ്പെട്ട രണ്ടെണ്ണം.
+                    <br>
+                    മെര്‍സ് ആദ്യമായി പടര്‍ന്നത് ഒട്ടകങ്ങളില്‍ നിന്നാണെന്ന് ലോകാരോഗ്യസംഘടന വ്യക്തമാക്കിയിരുന്നു. ആദ്യമായി റിപ്പോര്‍ട്ട് ചെയ്യപ്പെട്ടത് 2012 ല്‍ മിഡില്‍ ഈസ്റ്റ് മേഖലയിലാണ്. ഇതും ശ്വാസകോശ സംബന്ധമായ പ്രശ്‌നങ്ങള്‍ തന്നെയായിരുന്നു. 
+                    എന്നാല്‍ ലക്ഷണങ്ങള്‍ മറ്റുള്ളവയെ അപേക്ഷിച്ച് അല്പം തീവ്രമായിരുന്നു.
+                    <br>
+                    സിവെറ്റ് ക്യാറ്റില്‍ നിന്നുമാണ് സാര്‍സ് പടര്‍ന്നത്. 2002-2003 കാലത്ത് ചൈനയില്‍ വ്യാപകമായി സാര്‍സ് ബാധിച്ചിരുന്നു. എണ്ണായിരത്തോളം പേര്‍ രോഗബാധിതരാവുകയും എണ്ണൂറോളം പേര്‍ മരണപ്പെടുകയും ചെയ്തിരുന്നു. 
+                    ദക്ഷിണ ചൈനയിലെ ഗുവാങ്‌ഡോങ് പ്രവിശ്യയിലാണ് ഈ രോഗം ആദ്യമായി റിപ്പോര്‍ട്ട് ചെയ്യപ്പെട്ടതെന്ന് ലോകാരോഗ്യസംഘടന വ്യക്തമാക്കുന്നു.
+                    <br>
+                    അതേ സമയം പുതിയ വൈറസിന്റെ ഉറവിടം പാമ്പുകളാണ് എന്നാണ് പറയുന്നത്. വൈറസിന്‍റെ ഉറവിടം വവ്വാലുകളാണെന്നായിരുന്നു ആദ്യം കരുതിയിരുന്നത്. 
+                    എന്നാല്‍ കൂടുതല്‍ പരിശോധനകളിൽ നിന്ന് ഇതിന്റെ ഉറവിടം പാമ്പുകളാണെന്ന് ജേണല്‍ ഓഫ് മെഡിക്കല്‍ വൈറോളജി വ്യക്തമാക്കുന്നു.
+                  </p>
+                </div>
+                <div class="modal-header">
+                  <h2 class="modal-title font" id="covid_precautions">Corona Virus, COVID 19 Transmission: എങ്ങനെയാണ് കൊറോണ വൈറസ് പടരുന്നത് ?</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    ചെെനയിലെ സീഫുഡ് മാർക്കറ്റിൽനിന്ന് പകർന്ന വൈറസ് മൃഗങ്ങളിൽനിന്ന് മാത്രമേ മനുഷ്യരിലേയ്ക്ക് പകരൂ എന്നാണ് ആദ്യം കരുതിയിരുന്നത്. എന്നാൽ മനുഷ്യനിൽനിന്ന് മനുഷ്യനിലേയ്ക്ക് പകരുമെന്ന് പിന്നീട് കണ്ടെത്തി . 
+                    ജീവനുള്ള മൃഗങ്ങൾ ഉള്ള പ്രാദേശിക സീഫുഡ് മാർക്കറ്റിലാണ് വുഹാൻ വൈറസിനെ കണ്ടെത്തിയതെങ്കിലും ഏത് മൃഗത്തിൽ നിന്നാണ് വൈറസ് ആളുകളിലേയ്ക്ക് പകർന്നതെന്ന് ഇതു വരെ വ്യക്തമല്ല.
+                    <br>
+                    ജലദോഷം, ന്യുമോണിയ ഇതെല്ലാം ഈ വൈറസ് ബാധയുടെ ലക്ഷണങ്ങളാണ്. കൊറോണ വൈറസ് മൂലം 2002 നവംബറിലും 2003 ജൂലൈയിലും ചൈനയിൽ ഉണ്ടായ സാർസ് ബാധയിൽ 8000 പേർ രോഗബാധിതരാകുകയും 774 പേർ മരണമടയുകയും ചെയ്തിരുന്നു. 
+                    കൊറോണയെ പ്രതിരോധിക്കാൻ വാക്സിനേഷനോ പ്രതിരോധ ചികിത്സയോ ഇല്ലായെന്നതാണ് രോഗത്തിന്റെ കാഠിന്യം വർധിപ്പിക്കുന്നത്.
+                    <br>
+                    തുമ്മൽ, ഹസ്തദാനം, അല്ലെങ്കിൽ ചുമ തുടങ്ങിയതിലൂടെ രോഗം ബാധിച്ച ഒരു വ്യക്തിയുടെ സ്രവങ്ങളിലൂടെ ഇത് പടരാം. വൈറസ് ബാധിച്ച ഒരാള്‍ തൊട്ട വസ്തുക്കളില്‍ വൈറസ് സാന്നിധ്യം ഉണ്ടാകാം. 
+                    ആ വസ്തുക്കള്‍ മറ്റൊരാള്‍ സ്പര്‍ശിച്ച് പിന്നീട് ആ കൈകള്‍ കൊണ്ട് മൂക്കിലോ കണ്ണിലോ മറ്റോ തൊട്ടാലും രോഗം പടരും.
+                  </p>
+                </div>
+                <div class="modal-header">
+                  <h2 class="modal-title font" id="covid_precautions">Corona Virus COVID 19 Symptoms: കൊറോണ വൈറസ് ലക്ഷണങ്ങൾ</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    ലോകാരോഗ്യ സംഘടനയുടെ അഭിപ്രായത്തിൽ, ‘ശ്വാസകോശ ലക്ഷണങ്ങൾ, പനി, ചുമ, ശ്വാസതടസം, ശ്വസന ബുദ്ധിമുട്ടുകൾ എന്നിവ അണുബാധയുടെ സാധാരണ ലക്ഷണങ്ങളാണ്. 
+                    കൂടുതൽ കഠിനമായ സന്ദർഭങ്ങളിൽ, അണുബാധ ന്യുമോണിയ, കടുത്ത അക്യൂട്ട് റെസ്പിറേറ്ററി സിൻഡ്രോം, വൃക്ക തകരാറുകൾ, മരണം എന്നിവയ്ക്ക് കാരണമാകും.’ 
+                    ചൈനയിലെ ഹുബെ പ്രവിശ്യയിലെ വുഹാൻ സിറ്റിയിലാണ് ഇത് ആദ്യമായി കണ്ടെത്തിയത് – അതിനാലാണ് ഇതിനെ വുഹാൻ വൈറസ് എന്നും വിളിക്കുന്നത് – അജ്ഞാതമായ കാരണങ്ങളാൽ ന്യൂമോണിയ കേസുകൾ വെളിച്ചത്തു വന്നതിനു ശേഷം 
+                    2019 ഡിസംബർ 31 ന് ലോകാരോഗ്യ സംഘടനയുടെ ശ്രദ്ധയിൽപ്പെടുത്തി.
+                    <br>
+                    പ്രതിരോധവ്യവസ്ഥ ദുര്‍ബലമായവരില്‍, അതായത് പ്രായമായവരിലും ചെറിയ കുട്ടികളിലും വൈറസ് പിടിമുറുക്കും. കൊറോണ വൈറസ് ശരീരത്തില്‍ പ്രവേശിച്ചാല്‍ 14 ദിവസത്തിനുള്ളില്‍ രോഗലക്ഷണങ്ങള്‍ കാണും. ഈ 14 ദിവസമാണ് ഇന്‍ക്യുബേഷന്‍ പിരിയഡ് എന്നറിയപ്പെടുന്നത്.
+                  </p>
+                </div>
+                <div class="modal-header">
+                  <h2 class="modal-title font" id="covid_precautions">Corona Virus COVID 19 Precautions: കൊറോണ പ്രതിരോധ മാർഗങ്ങൾ</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    നിർഭാഗ്യവശാൽ കൊറോണ വൈറസിന് കൃത്യമായ ചികിത്സയില്ല. പ്രതിരോധ വാക്‌സിനും ലഭ്യമല്ല. അതായത് വൈറസ് ബാധിക്കാതെ നോക്കുക എന്നത് മാത്രമാണ് ഏക പ്രതിരോധം. 
+                    രോഗികളുമായുള്ള സമ്പർക്കം ഒഴിവാക്കുക, നിങ്ങളുടെ കണ്ണുകൾ, മൂക്ക്, വായ എന്നിവ തൊടുന്നത് ഒഴിവാക്കുക, കൂടാതെ കുറഞ്ഞത് 20 സെക്കൻഡ് നേരം സോപ്പ് ഉപയോഗിച്ച് കൈ കഴുകുക. 
+                    രാജ്യാന്തര യാത്രകള്‍ ചെയ്യുന്നവര്‍ ശ്വാസകോശ സംബന്ധമായ രോഗങ്ങള്‍ ഉള്ളവരുമായുള്ള അടുത്ത സമ്പര്‍ക്കം ഒഴിവാക്കണം.
+                  </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
               <!-- Example split danger button -->
               <div class="dropdown pl-0.5">
                 <button type="button" class="btn btn-danger btn-lg dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,7 +190,7 @@
                   
                 </div>
               </div>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myChart">
+              <button type="button" class="btn btn-danger" data-toggle="modal">
                 Chart
               </button>
             <!-- Button trigger modal -->
@@ -178,10 +294,28 @@
             </div>
           </div>
         </div>
-        <div class="row m-3">
+        <div class="row m-3" id="additionalDetails">
+          <div class="col-md-3 col-12">
+            <div class="additionalDetails">
+              <button class="btn btn-danger animation-on-hover " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Additional Details
+              </button>
+              <div class="card collapse" id="collapseExample">
+                <h4 class="card-title m-3" id="stateName"></h4>
+                <h5 class="m-3" id="contactNumber"></h5>
+                <div class="card card-body" id="additionalDetailsBody">
+                  <table id="tableDetails">
+                    
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row m-3" id="" >
           <div class="col-md-12">
             <div class="chart-container">
-              <canvas id="myChart"></canvas>
+              <canvas class="bg-color" id="myChart"></canvas>
             </div>
           </div>
         </div>
@@ -212,7 +346,7 @@
       function savechanges(){
         var color = document.getElementById("dashboard").querySelectorAll(".bg-color");
         var light_darkMode = document.getElementById("dashboard").querySelectorAll(".bg-main");
-          // console.log(color);
+          console.log(color);
           // console.log(light_darkMode);
           var selected = document.querySelector('input[type=radio][name=exampleRadios]:checked');
           var mode = document.querySelector('input[type=radio][name=mode]:checked');
@@ -221,21 +355,30 @@
           switch(selected.value){ 
             case "option1":
               color[0].style.backgroundColor = "#F700C4";
-              color[1].style.backgroundColor = "#F700C4";
+              color[1].style.color = "#F700C4";
               color[2].style.backgroundColor = "#F700C4";
               color[3].style.backgroundColor = "#F700C4";
+              color[4].style.backgroundColor = "#F700C4";
+              color[5].style.borderColor = "#F700C4";
+              color[6].style.borderColor = "#F700C4";
               break;
             case "option2":
               color[0].style.backgroundColor = "#00D8D2";
-              color[1].style.backgroundColor = "#00D8D2";
+              color[1].style.color = "#00D8D2";
               color[2].style.backgroundColor = "#00D8D2";
               color[3].style.backgroundColor = "#00D8D2";
+              color[4].style.backgroundColor = "#00D8D2";
+              color[5].style.borderColor = "#00D8D2";
+              color[6].style.borderColor = "#00D8D2";
               break;
             case "option3":
               color[0].style.backgroundColor = "#385EF0";
-              color[1].style.backgroundColor = "#385EF0";
+              color[1].style.color = "#385EF0";
               color[2].style.backgroundColor = "#385EF0";
               color[3].style.backgroundColor = "#385EF0";
+              color[4].style.backgroundColor = "#385EF0";
+              color[5].style.borderColor = "#385EF0";
+              color[6].style.borderColor = "#385EF0";
               break;
             }
           switch(mode.value){
@@ -265,8 +408,9 @@
         document.getElementById("sidePanel").style.width = "0";
       }
       function selectSate(){
-        console.log("entering");
+        // console.log("entering");
         console.log(document.getElementById("stateWise").selectedIndex);
+        
     }
   </script>
 </body>
