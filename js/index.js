@@ -16,6 +16,7 @@ var data_covidNotification ={};
 var sateName =[];
 var stateNameCases = [];
 let medicalCollage =[];
+var tableClearingFlag =false;
 // var stateName_number;
 // let state_totalCase;
 
@@ -45,7 +46,11 @@ let medicalCollage =[];
             }
         //    console.log(index+":"+item.loc);
         });
-        console.log("contact_number"+":"+contact_number.number);
+        // console.log("contact_number"+":"+contact_number.number);
+        //********state name  Andaman and Nicobar Islands in medicalcollage is A & N Islands***************/
+        if(selectedState ==="Andaman and Nicobar Islands"){
+            selectedState = "A & N Islands";
+        }
         medicalCollages_informations.forEach(function(item, index, array){
             if(item.state === selectedState){
                  medicalCollage.push({hospitalName:item.name,city:item.city,ownership:item.ownership});
@@ -77,6 +82,7 @@ let medicalCollage =[];
         document.getElementById("contactNumber").innerHTML = "Contact Number :"+ contact_number.number;
         let table = document.getElementById("tableDetails");
         var row = table.insertRow(0);
+        table.classList.add("bg-color");
         var cell0 = row.insertCell(0);
         var cell1 = row.insertCell(1);
         var cell2 = row.insertCell(2);
@@ -84,7 +90,7 @@ let medicalCollage =[];
         cell1.innerHTML = "City";
         cell2.innerHTML = "OwnerShip";
         medicalCollage.forEach(function(item, index, array){
-            console.log(item);
+            // console.log(item);
              row = table.insertRow(index+1);
              cell0 = row.insertCell(0);
              cell1 = row.insertCell(1);
@@ -92,9 +98,11 @@ let medicalCollage =[];
              cell0.innerHTML = item.hospitalName;
              cell1.innerHTML = item.city;
              cell2.innerHTML = item.ownership;
-             console.log(index);
+            //  console.log(index);
         });
+        // console.log(table);
         medicalCollage.length =0;
+        tableClearingFlag =true;
         // let thead = table.createTHead();
         // thead.setAttribute("id", "thead");
         // let row = thead.insertRow(0);
@@ -193,6 +201,16 @@ let medicalCollage =[];
         }    
         myChart.update();
     }
+    function clearingaTable(){
+        let table = document.getElementById("tableDetails");
+        let tableRows = document.getElementsByTagName("tr");
+        var rowCount = tableRows.length;
+        console.log(tableRows);
+        while (table.firstChild){
+            table.removeChild(table.firstChild);
+        }
+        console.log(table);
+    }
 
  
 async function getCovidData(){
@@ -249,7 +267,12 @@ async function getCovidData(){
         option.value = state_name_totalCases[state_name_counter].state_name;
         option.addEventListener('click',function(){
             //  console.log(option.value);
+            if(tableClearingFlag ===true){
+                clearingaTable();
+                tableClearingFlag =false;
+            }
             stateWise_information(option.value);
+            
         });
         state_name_id.appendChild(option);
         // console.log(option);
